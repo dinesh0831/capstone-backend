@@ -10,7 +10,7 @@ var getPost=require("./routes/getPost")
 const mongo=require("./connection")
 const posts=require("./routes/posts")
 const middleware=require("./middleware")
-require('dotenv').config()
+require('dotenv').config({path:path.resolve(__dirname,"./.env")})
 var app = express();
 
 mongo.connect()
