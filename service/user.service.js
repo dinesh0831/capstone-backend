@@ -9,7 +9,7 @@ const UserService={
             // validation
             let {error}=await registerSchema.validate(req.body);
             if(error){
-            return res.send({message:"*validation failed"})
+            return res.send({message:"*validation failed",error})
             }
             // check the email existing or not
             const user=await Userlist.findOne({email:req.body.email}).exec()
