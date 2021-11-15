@@ -10,6 +10,7 @@ var getPost=require("./routes/getPost")
 const mongo=require("./connection")
 const posts=require("./routes/posts")
 const middleware=require("./middleware")
+const image=require("./routes/image")
 require('dotenv').config({path:path.resolve(__dirname,"./.env")})
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static("cover"))
 app.use("/getpost",getPost)
+app.use("/images",image)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(middleware.authtoken)
