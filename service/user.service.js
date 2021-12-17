@@ -89,7 +89,7 @@ const UserService={
                 wishList:req.body.wishList,
                 bookedList:req.body.bookedList
             })
-            res.send(data)
+            res.send({message:"*successfully booked your room please check your profile to know more "})
         }
         catch(err){
             res.send(err)
